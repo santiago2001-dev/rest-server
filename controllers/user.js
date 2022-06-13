@@ -1,3 +1,4 @@
+const { response } = require("express");
 const req = require("express/lib/request");
 
 
@@ -14,7 +15,7 @@ const putUser = (req,res)=>{
     })
 }
 
-const posttUser = (req,res)=>{
+const posttUser = (req,res = response)=>{ 
     const body = req.body;
     res.json({
         msg: 'edit user',
@@ -23,6 +24,7 @@ const posttUser = (req,res)=>{
 
     console.log(body)
 }
+
 const deletetUser = (req,res)=>{
     res.json({
         msg: 'edit user'
